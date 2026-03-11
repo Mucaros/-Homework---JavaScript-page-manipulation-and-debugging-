@@ -1,11 +1,11 @@
 const body = document.querySelector('body')
-
+const section1 = document.querySelector('.section1')
 
 const splitInput = document.createElement('input')
 const splitButton = document.createElement('button')
 splitButton.textContent = 'split'
-body.append(splitInput)
-body.append(splitButton)
+section1.append(splitInput)
+section1.append(splitButton)
 
 splitButton.addEventListener('click', () => {
 
@@ -14,6 +14,6 @@ splitButton.addEventListener('click', () => {
 
     const result = document.createElement('p')
     result.textContent = splitArray
-    body.append(result)
+    section1.append(result)
 })
 

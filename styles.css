@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(28, 28, 28);
+    color: white;
+    display: flex;
+    gap: 5rem;
+    margin-top: 5rem;
+}
+
+section{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
