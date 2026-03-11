@@ -30,9 +30,27 @@ section2.append(splitCommaInput)
 section2.append(splitCommaButton)
 
 splitCommaButton.addEventListener('click', () => {
-    const splitArray = splitCommaInput.value.replace(/[\[\]\/"]/g, '').split(',')
+    const splitArray = splitCommaInput.value.replace(/[\[\]\/"]/g, '').trim().split(',')
 
     const result = document.createElement('p')
     result.textContent = splitArray
     section2.append(result)
+
+    sum(splitArray)
 })
+
+// 1 c)
+
+function sum(splitArray){
+    const list = document.createElement('ul')
+    section2.append(list)
+
+    for (let i = 0; i < splitArray.length - 1; i++){
+        const listElement = document.createElement('li')
+        const result = parseFloat(splitArray[i]) + parseFloat((splitArray)[i + 1])
+        
+
+        listElement.textContent = result.toFixed(2)
+        list.append(listElement)
+    }
+}
