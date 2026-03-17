@@ -7,25 +7,24 @@ let resultat=splitLinje("A\nB\nC\n");
 console.log(resultat); 
 
 
-// 1 c)
-
-function sum(splitArray){
-    const list = document.createElement('ul')
-    section2.append(list)
-
-    for (let i = 0; i < splitArray.length - 1; i++){
-        const listElement = document.createElement('li')
-        const result = parseFloat(splitArray[i]) + parseFloat((splitArray)[i + 1])
-        
-
-        listElement.textContent = result.toFixed(2)
-        list.append(listElement)
+//opg 1c. 
+function summer(number){
+    let resultat=[];
+    for (let i=0; i < number.length-1; i++){
+        resultat.push(number[i] + number[i+1]);
     }
+    return resultat;
 }
 
+const number=[1,2,3,4];
+const sum=summer(number);
+const list=document.getElementById("resultat"); 
 
-//opg 1c. 
-
+for(let i=0; i<sum.length; i++){
+    const li=document.createElement("li");
+    li.textContent=sum[i];
+    list.appendChild(li);
+}
 
 
 
