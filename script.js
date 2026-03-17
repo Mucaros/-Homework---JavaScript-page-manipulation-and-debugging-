@@ -18,6 +18,15 @@ splitButton.addEventListener('click', () => {
 })
 
 
+//opg 1a.
+function splitLinje(tekst) {
+    return tekst.split("\n")
+}
+
+let resultat=splitLinje("A\nB\nC\n");
+console.log(resultat); 
+
+
 
 // 1 b)
 const section2 = document.createElement('section')
@@ -54,6 +63,9 @@ function sum(splitArray){
         list.append(listElement)
     }
 }
+
+//opg 1c. 
+
 
 
 // 2 a)
