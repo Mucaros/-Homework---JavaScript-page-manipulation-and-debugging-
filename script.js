@@ -64,7 +64,9 @@ function sum(splitArray){
     }
 }
 
+
 //opg 1c. 
+
 
 
 
