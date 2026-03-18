@@ -1,10 +1,9 @@
 //opg 1a.
-function splitLinje(tekst) {
-    return tekst.split("\n")
+function splitLinje(text) {
+    return text.split("\n")
 }
 
-let resultat=splitLinje("A\nB\nC\n");
-console.log(resultat); 
+console.log(splitLinje("A\nB\nC\n"));
 
 
 //opg 1c. 
@@ -27,42 +26,36 @@ for(let i=0; i<sum.length; i++){
 }
 
 
+//opg 2.
+function leggTil(){
+    const input=document.getElementById("input");
+    const tekst=input.value;
+    const li=document.createElement("li");
+    const checkbox=document.createElement("input");
+    checkbox.type="checkbox"; 
 
-// 2 a)
-
-const toDoInput = document.createElement('input')
-const section3 = document.createElement('section')
-const toDoButton = document.createElement('button')
-const toDoList = document.createElement('ul')
-toDoButton.textContent = 'add ToDo item'
-body.append(section3)
-section3.append(toDoInput)
-section3.append(toDoButton)
-section3.append(toDoList)
-
-toDoButton.addEventListener('click', () => {
-    const listElement = document.createElement('li')
-    const removeButton = document.createElement('button')
-    removeButton.textContent = 'remove'
-    const userInput = toDoInput.value
-    
-    listElement.textContent = userInput
-    listElement.append(removeButton)
-    toDoList.append(listElement)
-
-    removeButton.addEventListener('click', () => {
-        listElement.remove()
-    })
-
-    const checkbox = document.createElement('input')
-    checkbox.type = 'checkbox'
-    listElement.prepend(checkbox)
-    
-    checkbox.addEventListener('change', () => {
+    checkbox.onclick=function(){
         if (checkbox.checked){
-            listElement.style.textDecoration = 'line-through';
-        } else{
-            listElement.style.textDecoration = 'none';
+            li.style.textDecoration="line-through";
+        } 
+        else {
+            li.style.textDecoration="none";
         }
-    })
-})
+    }
+
+    const span=document.createElement("span");
+    span.textContent=tekst;
+
+    const knapp=document.createElement("button");
+    knapp.textContent="Slett"; 
+
+    knapp.onclick=function(){
+        li.remove();
+    }
+
+    li.appendChild(checkbox);
+    li.appendChild(span);
+    li.appendChild(knapp);
+    document.getElementById("liste").appendChild(li);
+    input.value = "";
+}
